@@ -44,10 +44,7 @@ const formSchema = z.object({
   sell_price: z.number()
     .positive("Selling price must be positive")
     .min(1, "Selling price must be at least 1")
-    .max(10000000, "Selling price must not exceed 100,000,00")
-    .refine((value, ctx) => value > ctx.parent.purchase_price, {
-      message: "Selling price must be greater than purchase price",
-    }),
+    .max(10000000, "Selling price must not exceed 100,000,00"),
 });
 
 const EditProductForm = ({ product, setProducts, products }) => {

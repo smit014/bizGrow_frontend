@@ -125,7 +125,7 @@ export default function NewOrgModal() {
   const onSubmit = async (values) => {
     try {
       const res = await create_org(values);
-      navigate(`${res.data.Org_id}`);
+      navigate(`${res.data.Org_id}/dashboard`);
       toast({
         title: "Organization created",
         description: "Your new organization has been successfully created.",

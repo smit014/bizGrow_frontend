@@ -83,7 +83,7 @@ const EditCustomerForm = ({ customer, setCustomers, customers }) => {
       bill_address: customer.bill_address,
       city: customer.city,
       state: customer.state,
-      pincode: customer.pincode,
+      pincode: String(customer.pincode),
     },
   });
 
@@ -93,7 +93,7 @@ const EditCustomerForm = ({ customer, setCustomers, customers }) => {
         {
           ...values,
           //   phone: JSON.stringify(values.phone),
-          pincode: JSON.stringify(values.pincode),
+          // pincode: values.pincode,
         },
         params.id
       );
@@ -175,7 +175,7 @@ const EditCustomerForm = ({ customer, setCustomers, customers }) => {
                   <FormItem>
                     <FormLabel>Phone</FormLabel>
                     <FormControl>
-                      <Input {...field} type="number" />
+                      <Input {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
